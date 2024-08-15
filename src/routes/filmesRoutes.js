@@ -1,8 +1,8 @@
 import express from "express";
-import filmeController from "../controllers/filmeController.js";
+import filmesController from "../controllers/filmesController.js";
 
 const router = express.Router();
-const filme = new filmeController();
+const filme = new filmesController();
 
 router.get("/", (req, res) => {
   try {
@@ -11,3 +11,5 @@ router.get("/", (req, res) => {
     res.status(500).json({ erro: err.message });
   }
 });
+
+export default router;

@@ -7,7 +7,7 @@ const app = express();
 
 app.use(bodyParser.json());
 
-app.use('/',filmeRoutes);
+app.use("/", filmesRoutes);
 
 //exportando por default tudo que foi feito
 export default app;
