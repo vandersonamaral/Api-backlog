@@ -44,14 +44,13 @@ export default class Filmes {
       const [atualizado]= await filmeModel.update(req.body,
         {where: {id:req.params.id}}
       );
-      if(atualizado){
-        const filmeAtualizado= await filmeModel.findByPk(req.params.id);
-        res.json({messagem:"Filme Atualizado com sucesso!",filmeAtualizado});
+      if(!atualizado){
+          res.status(404).json({erro:'Filme não encontrado'});
+      }
+      const filmeAtualizado= await filmeModel.findByPk(req.params.id);
+          res.json({messagem:"Filme Atualizado com sucesso!",filmeAtualizado});
       
-      }
-      else{
-        res.status(404).json({erro:'Filme não encontrado'});
-      }
+     
 
     }
     catch(err){
