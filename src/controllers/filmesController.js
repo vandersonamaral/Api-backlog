@@ -1,3 +1,4 @@
+import { where } from "sequelize";
 import filmeModel from "../models/filmesModel.js";
 
 export default class Filmes {
@@ -45,17 +46,31 @@ export default class Filmes {
         {where: {id:req.params.id}}
       );
       if(!atualizado){
-          res.status(404).json({erro:'Filme não encontrado'});
+          return res.status(404).json({erro:'Filme não encontrado'});
       }
       const filmeAtualizado= await filmeModel.findByPk(req.params.id);
-          res.json({messagem:"Filme Atualizado com sucesso!",filmeAtualizado});
-      
-     
+        return res.json({messagem:"Filme Atualizado com sucesso!",filmeAtualizado}); 
 
     }
     catch(err){
       res.status(500).json({erro:err.message});
 
+    }
+  }
+
+
+  async DeletarFilme(req,res){
+    try{
+      const filmeDeletado=await filmeModel.destroy({
+          where:{id: req.params.id}
+      });
+      if(!filmeDeletado){
+        return res.status(404).json({erro:'Filme não encontrado'});
+      }
+      return res.json({messagem:"Filme deletado com sucesso! "}); 
+
+    }catch(err){
+      res.status(500).json({erro: err.message});
     }
   }
 
