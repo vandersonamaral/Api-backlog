@@ -1,6 +1,6 @@
-# Nome do projeto
+# Api Baclog
 
-Sistema de Backlog de conteúdos
+Sistema de Backlog de filmes
 
 ## Índice
 
