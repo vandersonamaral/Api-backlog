@@ -19,8 +19,10 @@ Este sistema foi concebido para servir de aprendizado pessoal em Javascript. A i
 
 ## Funcionalidades
 
-- Realiza uma busca geral de filmes cadastrados no banco;
--
+- Busca geral de filmes cadastrados no banco de dados;
+- Consultas por ID do filme;
+- Atualização de dados de um filme;
+- Exclusão de filmes.
 
 ## Tecnologias Utilizadas
 
