@@ -21,6 +21,7 @@ Este sistema foi concebido para servir de aprendizado pessoal em Javascript. A i
 
 - Busca geral de filmes cadastrados no banco de dados;
 - Consultas por ID do filme;
+- Consulta por título do filme;
 - Atualização de dados de um filme;
 - Exclusão de filmes.
 
