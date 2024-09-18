@@ -1,6 +1,6 @@
-# Nome do projeto
+# Api Backlog
 
-Sistema de Backlog de conteúdos
+Sistema de Backlog de filmes
 
 ## Índice
 
@@ -19,8 +19,11 @@ Este sistema foi concebido para servir de aprendizado pessoal em Javascript. A i
 
 ## Funcionalidades
 
-- Realiza uma busca geral de filmes cadastrados no banco;
--
+- Busca geral de filmes cadastrados no banco de dados;
+- Consulta por ID do filme;
+- Consulta por título do filme;
+- Atualização de dados de um filme;
+- Exclusão de filmes.
 
 ## Tecnologias Utilizadas
 
