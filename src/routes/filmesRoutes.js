@@ -12,6 +12,14 @@ router.get("/", (req, res) => {
   }
 });
 
+router.post("/busca", (req, res) => {
+  try {
+    filme.BuscarFilmePorTitulo(req, res);
+  } catch (err) {
+    res.status(500).json({ erro: err.message });
+  }
+});
+
 router.get("/:id", (req, res) => {
   try {
     filme.BuscarFilmePorId(req, res);
@@ -30,20 +38,18 @@ router.post("/", (req, res) => {
 
 router.put("/:id", (req, res) => {
   try {
-    filme.AualizarFilme(req,res);
-  } 
-  catch (err) {
-    res.status(500).json({err: err.message});
-  
-  }
-});
-router.delete("/:id",(req,res)=>{
-  try{
-    filme.DeletarFilme(req,res);
-  }catch(err){
-    res.status(500).json({erro:err.message});
+    filme.AualizarFilme(req, res);
+  } catch (err) {
+    res.status(500).json({ err: err.message });
   }
 });
 
+router.delete("/:id", (req, res) => {
+  try {
+    filme.DeletarFilme(req, res);
+  } catch (err) {
+    res.status(500).json({ erro: err.message });
+  }
+});
 
 export default router;
